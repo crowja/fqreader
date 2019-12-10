@@ -1,6 +1,6 @@
 /**
  *  @file fqreader.c
- *  @version 0.2.0-dev0
+ *  @version 0.3.0-dev0
  *  @date Tue Dec 10 15:35:17 CST 2019
  *  @copyright %COPYRIGHT%
  *  @brief FIXME
@@ -99,7 +99,7 @@ fqreader_free(struct fqreader **pp)
 const char *
 fqreader_version(void)
 {
-   return "0.2.0-dev0";
+   return "0.3.0-dev0";
 }
 
 int
