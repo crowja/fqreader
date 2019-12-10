@@ -1,7 +1,7 @@
 /**
  *  @file fqreader.h
  *  @version 0.1.2-dev0
- *  @date Sat Nov 30 22:09:45 CST 2019
+ *  @date Tue Dec 10 15:35:17 CST 2019
  *  @copyright %COPYRIGHT%
  *  @brief FIXME
  *  @details FIXME
@@ -29,7 +29,7 @@ struct fqreader *fqreader_new(char *fname);
  *  @details FIXME longer description here ...
  */
 
-void        fqreader_free(struct fqreader *p);
+void        fqreader_free(struct fqreader **pp);
 
 /**
  *  @brief Initialize a fqreader object.

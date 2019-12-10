@@ -3,7 +3,7 @@
 #include "fqreader.h"
 
 int
-main(int argc, char *argv[])
+main(void)
 {
    char       *h1, *h2, *s, *t;
    struct fqreader *r = fqreader_new(NULL);
@@ -15,6 +15,6 @@ main(int argc, char *argv[])
       printf("Qualities are: %s\n", t);
    }
 
-   fqreader_free(r);
+   fqreader_free(&r);
    return 0;
 }

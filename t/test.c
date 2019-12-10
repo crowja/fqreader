@@ -57,12 +57,12 @@ test_constr(void)
 {
    struct fqreader *z;
 
-   _printf_test_name("test_constr()", "fqreader_new, fqreader_free");
+   _printf_test_name("test_constr", "fqreader_new, fqreader_free");
 
    z = fqreader_new(NULL);
    ASSERT("Constructor test", z);
-   fqreader_free(z);
-
+   fqreader_free(&z);
+   ASSERT_EQUALS(NULL, z);
 }
 
 #if 0                                            /* 14 yy */

@@ -1,7 +1,7 @@
 /**
  *  @file fqreader.c
  *  @version 0.1.2-dev0
- *  @date Sat Nov 30 22:09:45 CST 2019
+ *  @date Tue Dec 10 15:35:17 CST 2019
  *  @copyright %COPYRIGHT%
  *  @brief FIXME
  *  @details FIXME
@@ -49,8 +49,6 @@ struct fqreader {
    gzFile      in;
 };
 
-/*** fqreader_new() ***/
-
 struct fqreader *
 fqreader_new(char *fname)
 {
@@ -85,29 +83,24 @@ fqreader_new(char *fname)
    return tp;
 }
 
-/*** fqreader_free() ***/
-
 void
-fqreader_free(struct fqreader *p)
+fqreader_free(struct fqreader **pp)
 {
-   gzclose(p->in);
-   varstr_free(p->h1);
-   varstr_free(p->h2);
-   varstr_free(p->s);
-   varstr_free(p->t);
+   gzclose((*pp)->in);
+   varstr_free(&(*pp)->h1);
+   varstr_free(&(*pp)->h2);
+   varstr_free(&(*pp)->s);
+   varstr_free(&(*pp)->t);
 
-   _FREE(p);
+   _FREE(*pp);
+   *pp = NULL;
 }
-
-/*** fqreader_version() ***/
 
 const char *
 fqreader_version(void)
 {
    return "0.1.2-dev0";
 }
-
-/*** fqreader_next() ***/
 
 int
 fqreader_next(struct fqreader *p, char **h1, char **h2, char **s, char **t)
