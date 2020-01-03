@@ -73,8 +73,8 @@ indent: stamp
 	@indent $(INDENT_FLAGS) ex/ex_1.c
 
 stamp:
-	@bash stamper.bash fqreader.c
-	@bash stamper.bash fqreader.h
+	@stamper.bash fqreader.c
+	@stamper.bash fqreader.h
 
 clean:
 	@/bin/rm -f *.o *~ *.BAK *.bak core.*
