@@ -2,9 +2,8 @@
  *  @file fqreader.c
  *  @version 0.3.0-dev0
  *  @date Tue Dec 10 15:35:17 CST 2019
- *  @copyright %COPYRIGHT%
- *  @brief FIXME
- *  @details FIXME
+ *  @copyright 2020 John A. Crow <crowja@gmail.com>
+ *  @license Unlicense <http://unlicense.org/>
  */
 
 /* Needed because fileno() seems to be POSIX C but not ANSI C */
