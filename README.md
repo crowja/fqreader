@@ -1,4 +1,4 @@
-# fqreader 0.3.0-dev0
+# fqreader 0.4.0-dev0
 
 Read a file or stream of sequences in FASTQ format:
 ```c

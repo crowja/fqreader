@@ -1,6 +1,6 @@
 /**
  *  @file fqreader.c
- *  @version 0.3.0-dev0
+ *  @version 0.4.0-dev0
  *  @date Tue Dec 10 15:35:17 CST 2019
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
@@ -98,7 +98,7 @@ fqreader_free(struct fqreader **pp)
 const char *
 fqreader_version(void)
 {
-   return "0.3.0-dev0";
+   return "0.4.0-dev0";
 }
 
 int

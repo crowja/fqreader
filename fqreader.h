@@ -1,6 +1,6 @@
 /**
  *  @file fqreader.h
- *  @version 0.3.0-dev0
+ *  @version 0.4.0-dev0
  *  @date Tue Dec 10 15:35:17 CST 2019
  *  @copyright 2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
