@@ -1,6 +1,7 @@
 # fqreader 0.4.0
 
 Read a file or stream of sequences in FASTQ format:
+
 ```c
     char       *h1, *h2, *s, *t;
     struct fqreader *r = fqreader_new(NULL);
@@ -12,6 +13,7 @@ Read a file or stream of sequences in FASTQ format:
        printf("Qualities are: %s\n", t);
     }
      . . . 
-    fqreader_free(r);
+    fqreader_free(&r);
+
 ```
 
