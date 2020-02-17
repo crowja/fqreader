@@ -1,8 +1,8 @@
 /**
  *  @file fqreader.c
  *  @version 0.4.0-dev0
- *  @date Tue Dec 10 15:35:17 CST 2019
- *  @copyright 2019 John A. Crow <crowja@gmail.com>
+ *  @date Mon Feb 17, 2020 05:47:56 PM CST
+ *  @copyright 2019-2020 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
 
@@ -40,7 +40,7 @@ struct fqreader {
    struct varstr *h2;
    struct varstr *s;
    struct varstr *t;
-   gzFile      in;
+   gzFile    in;
 };
 
 struct fqreader *
@@ -99,8 +99,8 @@ fqreader_version(void)
 int
 fqreader_next(struct fqreader *p, char **h1, char **h2, char **s, char **t)
 {
-   unsigned    rc = 1;
-   int         c;
+   unsigned  rc = 1;
+   int       c;
    enum states { s_need_h1, s_in_h1, s_in_s, s_in_h2, s_in_t };
    enum states state = s_need_h1;
 

@@ -5,7 +5,7 @@
 int
 main(void)
 {
-   char       *h1, *h2, *s, *t;
+   char     *h1, *h2, *s, *t;
    struct fqreader *r = fqreader_new(NULL);
 
    while (fqreader_next(r, &h1, &h2, &s, &t)) {
