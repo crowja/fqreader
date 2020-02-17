@@ -2,7 +2,7 @@
  *  @file fqreader.c
  *  @version 0.4.0-dev0
  *  @date Tue Dec 10 15:35:17 CST 2019
- *  @copyright 2020 John A. Crow <crowja@gmail.com>
+ *  @copyright 2019 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
 
@@ -25,20 +25,15 @@ typedef FILE *gzFile;
 #endif
 #include "fqreader.h"
 
-#ifdef  _IS_NULL
-#undef  _IS_NULL
+#ifdef  IS_NULL
+#undef  IS_NULL
 #endif
-#define _IS_NULL(p)   ((NULL == (p)) ? (1) : (0))
+#define IS_NULL(p)   ((NULL == (p)) ? (1) : (0))
 
-#ifdef  _FREE
-#undef  _FREE
+#ifdef  FREE
+#undef  FREE
 #endif
-#define _FREE(p)      ((NULL == (p)) ? (0) : (free((p)), (p) = NULL))
-
-#ifdef  _FATAL
-#undef  _FATAL
-#endif
-#define _FATAL(fmt, msg, code) do { fprintf( stderr, (fmt), (msg) ); exit( code ); } while( 0 )
+#define FREE(p)      ((NULL == (p)) ? (0) : (free((p)), (p) = NULL))
 
 struct fqreader {
    struct varstr *h1;
@@ -54,16 +49,16 @@ fqreader_new(char *fname)
    struct fqreader *tp;
 
    tp = (struct fqreader *) malloc(sizeof(struct fqreader));
-   if (_IS_NULL(tp))
+   if (IS_NULL(tp))
       return NULL;
 
-   if (_IS_NULL(fname))
+   if (IS_NULL(fname))
       tp->in = gzdopen(fileno(stdin), "r");
 
    else
       tp->in = gzopen(fname, "r");
 
-   if (_IS_NULL(tp->in))
+   if (IS_NULL(tp->in))
       return NULL;
 
 #ifdef  HAVE_ZLIB
@@ -91,7 +86,7 @@ fqreader_free(struct fqreader **pp)
    varstr_free(&(*pp)->s);
    varstr_free(&(*pp)->t);
 
-   _FREE(*pp);
+   FREE(*pp);
    *pp = NULL;
 }
 
@@ -175,6 +170,5 @@ fqreader_next(struct fqreader *p, char **h1, char **h2, char **s, char **t)
    return rc;
 }
 
-#undef _IS_NULL
-#undef _FREE
-#undef _FATAL
+#undef IS_NULL
+#undef FREE

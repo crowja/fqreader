@@ -2,17 +2,12 @@
  *  @file fqreader.h
  *  @version 0.4.0-dev0
  *  @date Tue Dec 10 15:35:17 CST 2019
- *  @copyright 2020 John A. Crow <crowja@gmail.com>
+ *  @copyright 2019 John A. Crow <crowja@gmail.com>
  *  @license Unlicense <http://unlicense.org/>
  */
 
-#ifndef _FQREADER_H_
-#define _FQREADER_H_
-
-#ifdef  _PACKAGE_NAME
-#undef  _PACKAGE_NAME
-#endif
-#define _PACKAGE_NAME "fqreader"
+#ifndef FQREADER_H
+#define FQREADER_H
 
 struct fqreader;
 
@@ -20,14 +15,12 @@ struct fqreader;
  *  @brief Create and return a new fqreader object.
  *  @details FIXME longer description here ...
  */
-
 struct fqreader *fqreader_new(char *fname);
 
 /**
  *  @brief Clean up and free a fqreader structure.
  *  @details FIXME longer description here ...
  */
-
 void        fqreader_free(struct fqreader **pp);
 
 /**
@@ -36,17 +29,14 @@ void        fqreader_free(struct fqreader **pp);
  *  @param p Pointer to a fqreader object
  *  @param x FIXME
  */
-
 int         fqreader_init(struct fqreader *p, void *x);
 
 /**
  *  @brief Return the version of this package.
  *  @details FIXME longer description here ...
  */
-
 const char *fqreader_version(void);
 
 int         fqreader_next(struct fqreader *p, char **h1, char **h2, char **s, char **t);
-
 
 #endif
